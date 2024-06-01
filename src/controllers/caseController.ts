@@ -6,7 +6,7 @@ export const create = async (req:Request, res:Response) => {
     try {
         const response = await caseService.createCase(req.body);
         return res.status(201).json({
-            message: 'Successfully created the airport',
+            message: 'Successfully created the cases',
             err: {},
             data: response,
             success: true
@@ -17,7 +17,7 @@ export const create = async (req:Request, res:Response) => {
             data: {},
             success: false,
             err: error,
-            message: 'Cannot create a new airport'
+            message: 'Cannot create a new cases'
         })
     }
 }
@@ -26,7 +26,7 @@ export const get = async (req:Request, res:Response) => {
     try {
         const response = await caseService.getAllCases(req.query);
         return res.status(201).json({
-            message: 'Successfully created the airport',
+            message: 'Successfully fetched the cases',
             err: {},
             data: response,
             success: true
@@ -37,7 +37,7 @@ export const get = async (req:Request, res:Response) => {
             data: {},
             success: false,
             err: error,
-            message: 'Cannot create a new airport'
+            message: 'error while fetching cases'
         })
     }
 }
